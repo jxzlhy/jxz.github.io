@@ -2033,8 +2033,8 @@ ul.staggered-list li {
 }
 footer.page-footer {
 	margin-top: 20px;
-	padding-top: 20px;
-	background-color: #ee6e73
+	padding-top: 10px !important;
+	background-color: #ee6e73;
 }
 footer.page-footer .footer-copyright {
 	overflow: hidden;
@@ -4923,7 +4923,7 @@ nav ul a span.badge {
 .row {
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 20px
+	margin-bottom: 10px !important;
 }
 .row:after {
 	content: "";
