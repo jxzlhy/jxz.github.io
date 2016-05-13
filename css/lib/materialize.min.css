@@ -7397,7 +7397,8 @@ select {
     width: 100%;
 }
 .side-nav li.side-user{
-	 height: 200px !important;
+	padding-top: 20px;
+	 height: 220px !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -7424,7 +7425,7 @@ select {
 	font-size: 1.2rem;
 	height: 64px !important;
 	line-height: 64px !important;
-	padding: 0 15px
+	/*padding: 0 15px*/
 }
 .drag-target {
 	height: 100%;
