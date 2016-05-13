@@ -1789,6 +1789,8 @@ a {
 	align-items: center
 }
 .valign-wrapper .valign {
+	width: 100%;
+	text-align: center;
 	display: block
 }
 ul {
@@ -4955,8 +4957,9 @@ nav ul a span.badge {
 	right: auto
 }
 .row .col.s4 {
-	width: 33.3333333333%;
+	width: 100%;
 	margin-left: auto;
+	text-align: center;
 	left: auto;
 	right: auto
 }
@@ -4979,7 +4982,8 @@ nav ul a span.badge {
 	right: auto
 }
 .row .col.s8 {
-	width: 66.6666666667%;
+	width: 100%;
+	height: 70px !important;
 	margin-left: auto;
 	left: auto;
 	right: auto
@@ -7370,6 +7374,9 @@ select {
 	overflow-y: auto;
 	will-change: left
 }
+.side-nav .info .name{
+	font-size: 1.7em !important;
+}
 .side-nav.right-aligned {
 	will-change: right;
 	right: -105%;
@@ -7386,6 +7393,26 @@ select {
 .side-nav li:hover, .side-nav li.active {
 	background-color: #ddd
 }
+.side-nav .row .col{
+	line-height: 150px;
+    width: 100%;
+}
+.side-nav li.side-user{
+	 height: 170px !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.side-nav .avatar-image{
+	width: 90px !important;
+}
+
+
+.side-nav .avatar-image{-webkit-transition:1.5s linear;transition:1.5s linear;}
+.side-nav .avatar-image:hover{-webkit-transform:rotate(360deg);transform:rotate(360deg);}
 .side-nav a {
 	color: #444;
 	display: block;
