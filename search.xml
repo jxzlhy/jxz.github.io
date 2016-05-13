@@ -191,12 +191,6 @@
   
     
     <entry>
-      <title><![CDATA[读书]]></title>
-      <url>http://jxzlhy.github.io/reading/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>http://jxzlhy.github.io/about/index.html</url>
       <content type="html"><![CDATA[<h3 id="我是江锡忠，是一名刚入行的菜鸡前端程序猿"><a href="#我是江锡忠，是一名刚入行的菜鸡前端程序猿" class="headerlink" title="我是江锡忠，是一名刚入行的菜鸡前端程序猿"></a>我是江锡忠，是一名刚入行的菜鸡前端程序猿</h3><h3 id="爱玩手机游戏，热爱刷机"><a href="#爱玩手机游戏，热爱刷机" class="headerlink" title="爱玩手机游戏，热爱刷机"></a>爱玩手机游戏，热爱刷机</h3><h3 id="单身狗。。。。。"><a href="#单身狗。。。。。" class="headerlink" title="单身狗。。。。。"></a>单身狗。。。。。</h3>]]></content>
@@ -205,6 +199,12 @@
     <entry>
       <title><![CDATA[分类]]></title>
       <url>http://jxzlhy.github.io/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[读书]]></title>
+      <url>http://jxzlhy.github.io/reading/index.html</url>
       <content type="html"></content>
     </entry>
     
