@@ -7,13 +7,15 @@
 
     
 
-    <title>音乐 | </title>
+    <title>神秘的12行代码 | </title>
     <meta name="author" content="江锡忠">
+    
+    <meta name="description" content="前段时间逛论坛时看到一篇文章，说一段12行的JavaScript代码，就可以能让firefox、chrome、safari浏览器崩溃，而且还能让iphone重启，安卓手机闪退！代码如下：123456789101112&amp;lt;html&amp;gt;&amp;lt;body&amp;gt;&amp;lt;script&amp;gt;var ">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="神秘的12行代码"/>
     <meta property="og:site_name" content="一入前端深似海"/>
 
     
@@ -215,30 +217,96 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper blue">
         <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/技术/">技术</a>
+
 
         
-            <a class="breadcrumb" href="/categories/音乐/">音乐</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>神秘的12行代码</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="blue-link-context" datetime="2016-05-17T05:53:28.000Z"><a href="/2016/05/17/神秘的12行代码/">2016-05-17</a></time>
+
+            
+    <div class="tags-row">
         
-            <a href="/2016/05/10/HallofFame/" class="collection-item grey-text text-darken-1">
-                <time datetime="2016-05-10T06:07:17.000Z">2016-05-10</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                Hall of Fame
-            </a>
+            <a href="/tags/HTML-5/" class="chip green accent-4">HTML 5</a>
+        
+            <a href="/tags/代码/" class="chip green accent-4">代码</a>
         
     </div>
+
+
+            <div class="toc blue-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#HTML5之history对象："><span class="section table-of-contents-text">HTML5之history对象：</span></a></li></ol>
+</div>
+
+
+            <div class="entry blue-link-context">
+                <p>前段时间逛论坛时看到一篇文章，说一段12行的JavaScript代码，就可以能让firefox、chrome、safari浏览器崩溃，而且还能让iphone重启，安卓手机闪退！代码如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var total="";</span><br><span class="line">for (var i=0;i&lt;1000000;i++)</span><br><span class="line">&#123;</span><br><span class="line">total= total+i.toString();</span><br><span class="line">history.pushState(0,0,total);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>很短的一段代码，起初我还不信邪，秉着no zuo no dai的精神，我试了一下，结果。。。</p>
+<p><img src="http://7xtwbc.com1.z0.glb.clouddn.com/m.jpg" alt="此处输入图片的描述"></p>
+<p>有胆的你也可以来试试，不过提醒你最好保存好浏览器里的历史记录（如果对你用的），不然后果自负！！<br>附上链接：<a href="http://jxzlhy.github.io/demo/pushstate_demo.html">http://jxzlhy.github.io/demo/pushstate_demo.html</a><br>当时我是用电脑火狐浏览器打开的，不一会儿浏览器就直接卡死了。重启浏览器看了一下浏览器的历史记录，如图：</p>
+<p><img src="http://7xtwbc.com1.z0.glb.clouddn.com/pushstate.png" alt="此处输入图片的描述"></p>
+<p>后这是为什么呢？？来我度娘了一下，发现原来是<code>history.pushState()</code>这个东东的原因。<br><code>history.pushstate()</code>是HTML5新引入的API，<code>pushState()</code>将指定的URL添加到浏览器浏览历史里,存储当前页面的记录。 当 <code>i&lt;100000</code>的时候会循环的将 total添加到浏览器历史里面，重复的次数多了，浏览器承受不住了，自然就会崩溃了。<br><strong>PS</strong>：虽然这段代码很简单，对大神们来说根本不值一提，但对我等菜鸡来说又学习到了新知识了，有兴趣的可以看看：</p>
+<h2 id="HTML5之history对象："><a href="#HTML5之history对象：" class="headerlink" title="HTML5之history对象："></a>HTML5之history对象：</h2><p>  –&gt; 链接：<a href="https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history</a></p>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- Duoshuo Comment BEGIN -->
+                <div class="ds-thread" data-thread-key="2016/05/17/神秘的12行代码/" data-title="神秘的12行代码" data-url="http://jxzlhy.github.io/2016/05/17/神秘的12行代码/"></div>
+
+                <script type="text/javascript">
+                    console.log(document.querySelector('.ds-thread'));
+                    var duoshuoQuery = {
+                        short_name: 'jxz36'
+                    };
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';
+                        ds.async = true;
+                        ds.src = (document.location.protocol == 'https:'
+                            ? 'https:'
+                            : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- Duoshuo Comment END -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>

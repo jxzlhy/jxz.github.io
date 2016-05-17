@@ -5890,7 +5890,8 @@ small {
 	background-color: inherit
 }
 .card.small {
-	height: 300px
+	height: 300px;
+	margin: 0 0.75rem;
 }
 .card.medium {
 	height: 400px
@@ -7423,8 +7424,8 @@ select {
 	color: #444;
 	display: block;
 	font-size: 1.2rem;
-	height: 64px !important;
-	line-height: 64px !important;
+	height: 50px !important;
+	line-height: 50px !important;
 	/*padding: 0 15px*/
 }
 .drag-target {
