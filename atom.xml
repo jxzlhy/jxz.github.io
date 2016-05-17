@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jxzlhy.github.io/"/>
-  <updated>2016-05-17T06:02:42.649Z</updated>
+  <updated>2016-05-17T06:32:01.660Z</updated>
   <id>http://jxzlhy.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://jxzlhy.github.io/2016/05/17/%E7%A5%9E%E7%A7%98%E7%9A%8412%E8%A1%8C%E4%BB%A3%E7%A0%81/"/>
     <id>http://jxzlhy.github.io/2016/05/17/神秘的12行代码/</id>
     <published>2016-05-17T05:53:28.000Z</published>
-    <updated>2016-05-17T06:02:42.649Z</updated>
+    <updated>2016-05-17T06:32:01.660Z</updated>
     
     <content type="html">&lt;p&gt;前段时间逛论坛时看到一篇文章，说一段12行的JavaScript代码，就可以能让firefox、chrome、safari浏览器崩溃，而且还能让iphone重启，安卓手机闪退！代码如下：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var total=&quot;&quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for (var i=0;i&amp;lt;1000000;i++)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;total= total+i.toString();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;history.pushState(0,0,total);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;很短的一段代码，起初我还不信邪，秉着no zuo no dai的精神，我试了一下，结果。。。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xtwbc.com1.z0.glb.clouddn.com/m.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
 &lt;p&gt;有胆的你也可以来试试，不过提醒你最好保存好浏览器里的历史记录（如果对你用的），不然后果自负！！&lt;br&gt;附上链接：&lt;a href=&quot;http://jxzlhy.github.io/demo/pushstate_demo.html&quot;&gt;http://jxzlhy.github.io/demo/pushstate_demo.html&lt;/a&gt;&lt;br&gt;当时我是用电脑火狐浏览器打开的，不一会儿浏览器就直接卡死了。重启浏览器看了一下浏览器的历史记录，如图：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xtwbc.com1.z0.glb.clouddn.com/pushstate.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;/p&gt;
-&lt;p&gt;后这是为什么呢？？来我度娘了一下，发现原来是&lt;code&gt;history.pushState()&lt;/code&gt;这个东东的原因。&lt;br&gt;&lt;code&gt;history.pushstate()&lt;/code&gt;是HTML5新引入的API，&lt;code&gt;pushState()&lt;/code&gt;将指定的URL添加到浏览器浏览历史里,存储当前页面的记录。 当 &lt;code&gt;i&amp;lt;100000&lt;/code&gt;的时候会循环的将 total添加到浏览器历史里面，重复的次数多了，浏览器承受不住了，自然就会崩溃了。&lt;br&gt;&lt;strong&gt;PS&lt;/strong&gt;：虽然这段代码很简单，对大神们来说根本不值一提，但对我等菜鸡来说又学习到了新知识了，有兴趣的可以看看：&lt;/p&gt;
+&lt;p&gt;这是为什么呢？？来我度娘了一下，发现原来是&lt;code&gt;history.pushState()&lt;/code&gt;这个东东的原因。&lt;br&gt;&lt;code&gt;history.pushstate()&lt;/code&gt;是HTML5新引入的API，&lt;code&gt;pushState()&lt;/code&gt;将指定的URL添加到浏览器浏览历史里,存储当前页面的记录。 当 &lt;code&gt;i&amp;lt;100000&lt;/code&gt;的时候会循环的将 total添加到浏览器历史里面，重复的次数多了，浏览器承受不住了，自然就会崩溃了。&lt;br&gt;&lt;strong&gt;PS&lt;/strong&gt;：虽然这段代码很简单，对大神们来说根本不值一提，但对我等菜鸡来说又学习到了新知识了，有兴趣的可以看看：&lt;/p&gt;
 &lt;h2 id=&quot;HTML5之history对象：&quot;&gt;&lt;a href=&quot;#HTML5之history对象：&quot; class=&quot;headerlink&quot; title=&quot;HTML5之history对象：&quot;&gt;&lt;/a&gt;HTML5之history对象：&lt;/h2&gt;&lt;p&gt;  –&amp;gt; 链接：&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developer.mozilla.org/zh-CN/docs/DOM/Manipulating_the_browser_history&lt;/a&gt;&lt;/p&gt;
 </content>
     
